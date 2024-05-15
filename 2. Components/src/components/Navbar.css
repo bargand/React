@@ -8,9 +8,6 @@
     font-size: 16px;
     font-weight: 600
 }
-.navbar:hover{
-    color: green;
-}
 ul{
     cursor: pointer;
     list-style: none;
