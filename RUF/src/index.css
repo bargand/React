@@ -25,3 +25,19 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.btn{
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+  padding: 20px 40px;
+  border: 1px solid #8d8d8d63;
+  box-shadow: 5px 5px 10px;
+  font-size: 16px;
+}
