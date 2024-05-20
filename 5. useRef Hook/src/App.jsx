@@ -2,14 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 
 const App = () => {
   const [value, setValue] = useState(0);
-  const [back, setBack] = useState("red")
+  // const [back, setBack] = useState("red")
 
   const ref = useRef()
 
   useEffect(() => {
     console.log(`Re-rendering....`);
-    ref.current.style.background = "green"
-  },[back]);
+  });
 
   return (
     <div className="app">
@@ -21,7 +20,7 @@ const App = () => {
       >
         Count Is {value}{" "}
       </button>
-      <button onClick={()=>{setBack("green")}}>Change The Background To {back}</button>
+      <button onClick={()=>{ref.current.style.display = "none"}}>Change The Background To</button>
     </div>
   );
 };
