@@ -13,12 +13,12 @@ function App() {
       setMode("dark");
       document.body.style.background = "#BD34FE";
       document.body.style.color = "white";
-      setModeText("Switch To Light Mode")
+      setModeText("Switch To Light Mode");
     } else {
       setMode("light");
       document.body.style.background = "white";
       document.body.style.color = "#BD34FE";
-      setModeText("Switch To Dark Mode")
+      setModeText("Switch To Dark Mode");
     }
   };
 
@@ -42,9 +42,10 @@ function App() {
         <button
           onClick={() => {
             toggelMode();
+            setCount((count) => count + 1);
           }}
         >
-          {modeText}
+          {modeText} {count}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
