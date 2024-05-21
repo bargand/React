@@ -6,16 +6,19 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
   const [mode, setMode] = useState("light");
+  const [modeText, setModeText] = useState("Switch To Dark Mode");
 
   let toggelMode = () => {
     if (mode === "light") {
       setMode("dark");
       document.body.style.background = "#BD34FE";
       document.body.style.color = "white";
+      setModeText("Switch To Light Mode")
     } else {
       setMode("light");
       document.body.style.background = "white";
       document.body.style.color = "#BD34FE";
+      setModeText("Switch To Dark Mode")
     }
   };
 
@@ -41,7 +44,7 @@ function App() {
             toggelMode();
           }}
         >
-          Change The Mode Of Light
+          {modeText}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
