@@ -15,7 +15,10 @@ const App = () => {
   return (
     <div>
       {text.map((texts)=>{
-        <h1 key={texts.id}>{texts.title}</h1>
+        return <div key={texts.id}>
+          <h1>{texts.title}</h1>
+          <p>{texts.body}</p>
+        </div>
       })}
     </div>
   )
