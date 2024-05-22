@@ -1,4 +1,6 @@
 import React,{useState, useEffect} from 'react'
+import Card from './components/Card';
+import "./components/Card.css";
 
 const App = () => {
     const [text, setText] = useState([]);
@@ -13,14 +15,15 @@ const App = () => {
         });
     }, []);
   return (
-    <div>
+    <>
+    <div className='cards'>
       {text.map((texts)=>{
         return <div key={texts.id}>
-          <h1>{texts.title}</h1>
-          <p>{texts.body}</p>
+          <Card title= {texts.title} description = {texts.body}/>
         </div>
       })}
     </div>
+    </>
   )
 }
 
