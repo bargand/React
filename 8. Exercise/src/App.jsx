@@ -19,7 +19,7 @@ const App = () => {
   
   return (
     <div>
-      
+      console.log('hi')
     </div>
   )
 }
