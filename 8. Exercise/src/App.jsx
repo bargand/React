@@ -19,7 +19,11 @@ const App = () => {
   
   return (
     <div>
-      console.log('hi')
+      {value.map((values)=>{
+        return <div key={values.id}>
+          <p>{values.name}</p>
+        </div>
+      })}
     </div>
   )
 }
