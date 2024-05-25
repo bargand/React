@@ -18,6 +18,9 @@ function App() {
   let MouseOver=()=>{
     console.log('this is mouse over')
   }
+  let OnChange=()=>{
+    console.log('on change function is run')
+  }
 
   return (
     <>
@@ -26,6 +29,7 @@ function App() {
       <input type="text" name="hi" onKeyDown={keyDown}/>
       <div className='mouse1' onMouseOut={MouseOut}>This is Mouse Out</div>
       <div className='mouse2' onMouseOver={MouseOver}>This is Mouse Over</div>
+      <input type="email" name="" id="" onChange={OnChange}/>
     </div>
     </>
   )
