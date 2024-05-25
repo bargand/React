@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.mouse1{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+.mouse2{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
