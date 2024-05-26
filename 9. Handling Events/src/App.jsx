@@ -30,6 +30,7 @@ function App() {
       <div className='mouse1' onMouseOut={MouseOut}>This is Mouse Out</div>
       <div className='mouse2' onMouseOver={MouseOver}>This is Mouse Over</div>
       <input type="email" name="" id="" onChange={OnChange}/>
+      <div className="dummy" onCli>hi!</div>
     </div>
     </>
   )
