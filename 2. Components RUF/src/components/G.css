@@ -3,3 +3,9 @@
     height: 100%;
     background-color: #FF00FF ;
 }
+@media screen and (max-width: 480px) {
+    .g{
+        width: 100%;
+        height: 100%;
+    }
+  }

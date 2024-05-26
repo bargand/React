@@ -3,3 +3,10 @@
     height: 100%;
     background-color: red;
 }
+
+@media screen and (max-width: 480px) {
+    .j{
+        width: 100%;
+        height: 100%;
+    }
+  }

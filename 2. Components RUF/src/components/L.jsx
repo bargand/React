@@ -1,5 +1,6 @@
 import React from 'react'
 import "./L.css"
+import "./M.css"
 import M from "./M"
 import G from "./G"
 

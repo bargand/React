@@ -1,4 +1,5 @@
 import React from 'react'
+import "./I.css"
 import './A.css'
 
 const A = () => {
