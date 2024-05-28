@@ -1,12 +1,25 @@
-import React from "react";
+import React,{useState} from "react";
 import "./BodyElement.css";
 
 const BodyElement = () => {
+  const [todo, setTodo] = useState("")
+  const [todos, setTodos] = useState([])
+
+  let handleAdd=()=>{
+    setTodos([...todos, {todo, isCompleted: false}])
+    setTodo("")
+    console.log(todos)
+  }
+  let handleChange=(e)=>{
+    setTodo(e.target.value)
+  }
   return (
     <>
       <div className="formElement">
         <p className="input-container">
           <input
+          onChange={handleChange}
+          value={todo}
             type="text"
             placeholder="Enter your name"
             name="text"
@@ -15,7 +28,7 @@ const BodyElement = () => {
             autoComplete="name"
           />
         </p>
-        <button>
+        <button onClick={handleAdd}>
           <div className="svg-wrapper-1">
             <div className="svg-wrapper">
               <svg
@@ -36,13 +49,16 @@ const BodyElement = () => {
         </button>
       </div>
       <div className="lowerPart">
-        <div className="todoText">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, veritatis!</p>
-        </div>
+        <h1>Your Todos</h1>
+        {todos.map(item=>{
+        return <div className="todoText">
+          <p>{item.todo}</p>
         <div className="toButtons">
-          <p>EDIT</p>
-          <p>DELTET</p>
+          <button className="btn">Edit</button>
+          <button className="btn">Delete</button>
         </div>
+        </div>
+        })}
       </div>
     </>
   );
