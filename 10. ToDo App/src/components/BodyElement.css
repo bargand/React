@@ -1,12 +1,12 @@
 .input-container {
   --c-text: rgb(50, 50, 80);
   --c-bg: rgb(252, 252, 252);
-  --c-outline: rgb(55, 45 , 190);
+  --c-outline: rgb(55, 45, 190);
   display: grid;
   gap: 1ch;
   position: relative;
   width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: black;
 }
 
@@ -46,14 +46,12 @@
   position: absolute;
   left: 0;
   top: 50%;
-  transition: transform var(--timing),
-    opacity var(--timing);
+  transition: transform var(--timing), opacity var(--timing);
   transform: translateY(-50%);
   opacity: 0;
   color: var(--c-text);
   font-weight: 500;
 }
-
 
 button {
   font-family: inherit;
@@ -108,7 +106,7 @@ button:active {
     transform: translateY(-0.1em);
   }
 }
-.formElement{
+.formElement {
   display: flex;
   width: 100%;
   background-color: #ffffff;
@@ -117,7 +115,7 @@ button:active {
   border-radius: 10px;
 }
 
-.lowerPart{
+.lowerPart {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -129,31 +127,68 @@ button:active {
   justify-content: space-between;
   box-shadow: 0 4px 8px 0 #0000001f, 0 6px 20px 0 #0000001f;
 }
-.lowerPart p{
+.lowerPart p {
   color: #000000e5;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
   line-height: 45px;
-  padding: 8px;
+  padding-left: 25px ;
   border: none;
   border-radius: 10px;
 }
-.toButtons{
+.toButtons {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
 
-.btn{
+.btn {
   background-color: green;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   color: white;
 }
-.todoText{
+.todoText {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.todoTextFirst {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  cursor: pointer;
+}
+
+.container input {
+  display: none;
+}
+
+.container svg {
+  overflow: visible;
+  width: 25px;
+  /* padding-left: 8px; */
+}
+
+.path {
+  fill: none;
+  stroke: green;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+  stroke-dasharray: 241 9999999;
+  stroke-dashoffset: 0;
+}
+
+.container input:checked ~ svg .path {
+  stroke-dasharray: 70.5096664428711 9999999;
+  stroke-dashoffset: -262.2723388671875;
 }
