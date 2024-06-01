@@ -1,0 +1,23 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 30px 0 30px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0 #0000001f, 0 6px 20px 0 #0000001f;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.count{
+    display: flex;
+    flex-direction: row;
+}
+.brand{
+    display: flex;
+    flex-direction: row;
+}
+.brand h2{
+    font-family: 'Courier New', Courier, monospace;
+}

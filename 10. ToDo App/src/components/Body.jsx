@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Body.css"
 import BodyElement from './BodyElement'
+import Footer from './Footer'
 
 const Body = () => {
   return (
@@ -11,6 +12,7 @@ const Body = () => {
       <div className="todoBody">
         <h1>TODO</h1>
         <BodyElement/>
+        <Footer/>
       </div>
     </div>
     </>

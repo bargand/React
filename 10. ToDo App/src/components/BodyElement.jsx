@@ -48,7 +48,7 @@ const BodyElement = () => {
             onChange={handleChange}
             value={todo}
             type="text"
-            placeholder="Enter your name"
+            placeholder="Enter Your Todo"
             name="text"
             id="text"
             className="input-field"
@@ -72,13 +72,15 @@ const BodyElement = () => {
               </svg>
             </div>
           </div>
-          <span>Submit</span>
+          <span>Save</span>
         </button>
       </div>
       <div className="lowerPart">
         <h1>Your Todos</h1>
+        <div className="count">
         <p>Checked: {checkedCount}</p>
         <p>Unchecked: {todos.length - checkedCount}</p>
+        </div>
         {todos.map((item, index) => {
           return (
             <div className="todoText" key={index}>

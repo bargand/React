@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
+  const d = new Date();
+  let year = d.getFullYear();
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <div className="footer">
+        <div className="brand">
+          <h2>BARGAND</h2>
+        </div>
+        <div className="copyright">Copyright {year}, All Rights Reserved.</div>
+      </div>
+    </>
+  );
+};
 
-export default Footer
+export default Footer;

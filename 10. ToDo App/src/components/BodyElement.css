@@ -192,3 +192,12 @@ button:active {
   stroke-dasharray: 70.5096664428711 9999999;
   stroke-dashoffset: -262.2723388671875;
 }
+.count{
+  width: 20%;
+  /* justify-content: center; */
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 #0000001f, 0 6px 20px 0 #0000001f;
+  position: absolute;
+  margin-left: 856px;
+}
