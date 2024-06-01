@@ -4,15 +4,42 @@ import "./BodyElement.css";
 const BodyElement = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
+  const [checkedCount, setCheckedCount] = useState(0);
 
   let handleAdd = () => {
-    setTodos([...todos, { todo, isCompleted: false }]);
+    setTodos([...todos, { todo, isCompleted: false, isEditing: false }]);
     setTodo("");
-    console.log(todos);
   };
+
   let handleChange = (e) => {
     setTodo(e.target.value);
   };
+
+  let handleCheckboxChange = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    setTodos(newTodos);
+    setCheckedCount(newTodos.filter(todo => todo.isCompleted).length);
+  };
+
+  let handleEditChange = (index, value) => {
+    const newTodos = [...todos];
+    newTodos[index].todo = value;
+    setTodos(newTodos);
+  };
+
+  let handleEditToggle = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].isEditing = !newTodos[index].isEditing;
+    setTodos(newTodos);
+  };
+
+  let handleDelete = (index) => {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
+    setCheckedCount(newTodos.filter(todo => todo.isCompleted).length);
+  };
+
   return (
     <>
       <div className="formElement">
@@ -50,25 +77,41 @@ const BodyElement = () => {
       </div>
       <div className="lowerPart">
         <h1>Your Todos</h1>
-        {todos.map((item) => {
+        <p>Checked: {checkedCount}</p>
+        <p>Unchecked: {todos.length - checkedCount}</p>
+        {todos.map((item, index) => {
           return (
-            <div className="todoText">
+            <div className="todoText" key={index}>
               <div className="todoTextFirst">
-              <label class="container">
-                <input type="checkbox" value={todo.isCompleted}/>
-                <svg viewBox="0 0 64 64" height="2em" width="2em">
-                  <path
-                    d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
-                    pathLength="575.0541381835938"
-                    class="path"
-                  ></path>
-                </svg>
-              </label>
-              <p className={item.isCompleted? "line-through":""}>{item.todo}</p>
+                <label className="container">
+                  <input 
+                    type="checkbox" 
+                    checked={item.isCompleted} 
+                    onChange={() => handleCheckboxChange(index)} 
+                  />
+                  <svg viewBox="0 0 64 64" height="2em" width="2em">
+                    <path
+                      d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                      pathLength="575.0541381835938"
+                      className="path"
+                    ></path>
+                  </svg>
+                </label>
+                {item.isEditing ? (
+                  <input 
+                    type="text" 
+                    value={item.todo} 
+                    onChange={(e) => handleEditChange(index, e.target.value)} 
+                  />
+                ) : (
+                  <p>{item.todo}</p>
+                )}
               </div>
               <div className="toButtons">
-                <button className="btn">Edit</button>
-                <button className="btn">Delete</button>
+                <button className="btn" onClick={() => handleEditToggle(index)}>
+                  {item.isEditing ? "Save" : "Edit"}
+                </button>
+                <button className="btn" onClick={() => handleDelete(index)}>Delete</button>
               </div>
             </div>
           );
