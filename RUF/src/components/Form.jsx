@@ -1,10 +1,14 @@
+// Frontend code
+// Filename - App.js
+// Filename - App.js
+
 import { useState } from "react";
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    let result = await fetch("mongodb://localhost:27017/user", {
+    let result = await fetch("mongodb://localhost:27017/company", {
       method: "post",
       body: JSON.stringify({ name, email }),
       headers: {
