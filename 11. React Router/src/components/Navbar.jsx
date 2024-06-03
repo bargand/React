@@ -27,7 +27,11 @@ const Navbar = () => {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <NavLink className="nav-link active" aria-current="page" to="/">
+                  <NavLink
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/"
+                  >
                     Home
                   </NavLink>
                 </li>
@@ -35,6 +39,34 @@ const Navbar = () => {
                   <NavLink className="nav-link" to="/about">
                     About
                   </NavLink>
+                </li>
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link dropdown-toggle"
+                    to="/cources"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Cources
+                  </NavLink>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <NavLink className="dropdown-item" to="/python">
+                        Python
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/javascript">
+                        JavaScript
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/react">
+                        React
+                      </NavLink>
+                    </li>
+                  </ul>
                 </li>
               </ul>
               <form className="d-flex" role="search">
