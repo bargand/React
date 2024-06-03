@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
 import Login from './components/Login'
+import User from './components/User'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
     {
       path: '/login',
       element: <><Navbar/><Login/></>
+    },
+    {
+      path: '/login/:username',
+      element: <><Navbar/><User/></>
     },
   ])
 
