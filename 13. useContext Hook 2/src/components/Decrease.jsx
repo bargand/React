@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { counterContext } from '../context/Context'
 
 const Decrease = () => {
+  const {count} = useContext(counterContext)
+  const a = {count}
   return (
     <div>
-      <h2>The Decreasing Value Is 0</h2>
+      <h2>The Decreasing Value Is {count}</h2>
+      
     </div>
   )
 }
