@@ -1,8 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import { counterContext } from "../context/Context";
+import { useNavigate } from "react-router-dom";
 
 const Counter = () => {
   const { count, setCount } = useContext(counterContext);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (count < 0) {
+      navigate("./decrease")
+    }
+    else{
+      navigate("./increase")
+    }
+  }, [count, navigate])
+  
 
   return (
     <div>
