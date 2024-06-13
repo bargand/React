@@ -7,11 +7,17 @@ const Counter = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (count < 0) {
+    if (count === 0) {
+      navigate("./")
+    }
+    else if (count < 0) {
       navigate("./decrease")
     }
-    else{
+    else if (count > 0) {
       navigate("./increase")
+    }
+    else{
+      alert("I Dont Understand")
     }
   }, [count, navigate])
   
